@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>嵌入式linux设备驱动程序开发学习-基于树莓派3b+ | 南树的个人博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前置知识1，交叉编译树莓派是arm架构，个人PC是x86架构，现要给树莓派开发一个app，有两种形式： 1、程序于树莓派上编译，于树莓派运行。 2、程序于个人PC上编译，于树莓派运行。 树莓派编译速度慢，特别是内核编译时，所以这里采用方式2，方式2这种方式即交叉编译。 最简单的驱动程序实验1，hello world主程序代码 helloworld-rpi.c 1234567891011121314">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嵌入式linux设备驱动程序开发学习-基于树莓派3b+">
+<meta property="og:url" content="http://example.com/2023/04/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="南树的个人博客">
+<meta property="og:description" content="前置知识1，交叉编译树莓派是arm架构，个人PC是x86架构，现要给树莓派开发一个app，有两种形式： 1、程序于树莓派上编译，于树莓派运行。 2、程序于个人PC上编译，于树莓派运行。 树莓派编译速度慢，特别是内核编译时，所以这里采用方式2，方式2这种方式即交叉编译。 最简单的驱动程序实验1，hello world主程序代码 helloworld-rpi.c 1234567891011121314">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-08T14:32:24.000Z">
+<meta property="article:modified_time" content="2023-04-08T15:38:33.692Z">
+<meta property="article:author" content="Zephan ly">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="南树的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Zephan ly</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="mail" target="_blank" href="/zephanly37@gmail.com" title="mail">mail</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/FreeBSD-Linux-Unix/" style="font-size: 10px;">FreeBSD Linux Unix</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">技术学习</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">游戏开发 技术学习</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">霞落见星月，雾影观曦光.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="mail" target="_blank" href="/zephanly37@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-嵌入式linux设备驱动程序开发学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2023-04-08T14:32:24.000Z" itemprop="datePublished">2023-04-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      嵌入式linux设备驱动程序开发学习-基于树莓派3b+
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="1，交叉编译"><a href="#1，交叉编译" class="headerlink" title="1，交叉编译"></a>1，交叉编译</h2><p>树莓派是arm架构，个人PC是x86架构，现要给树莓派开发一个app，有两种形式：</p>
+<p>1、程序于树莓派上编译，于树莓派运行。</p>
+<p>2、程序于个人PC上编译，于树莓派运行。</p>
+<p>树莓派编译速度慢，特别是内核编译时，所以这里采用方式2，方式2这种方式即交叉编译。</p>
+<h1 id="最简单的驱动程序"><a href="#最简单的驱动程序" class="headerlink" title="最简单的驱动程序"></a>最简单的驱动程序</h1><h2 id="实验1，hello-world"><a href="#实验1，hello-world" class="headerlink" title="实验1，hello world"></a>实验1，hello world</h2><p>主程序代码 <code>helloworld-rpi.c</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">include &lt;linux/module.h&gt;</span><br><span class="line"></span><br><span class="line">static int __init hello_init(void)</span><br><span class="line">&#123;</span><br><span class="line">        pr_info(&quot;hello world init\n&quot;);</span><br><span class="line">        return  0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static void __exit hello_exit(void)</span><br><span class="line">&#123;</span><br><span class="line">        pr_info(&quot;hello world exit\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module_init(hello_init);</span><br><span class="line">module_exit(hello_exit);</span><br><span class="line"></span><br><span class="line">MODULE_LICENSE(&quot;GPL&quot;);</span><br><span class="line">MODULE_AUTHOR(&quot;Zephan ly zephanly37@gmail.com&quot;);</span><br><span class="line">MODULE_DESCRIPTION(&quot;this is a print out hello world module&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>之后所有内核驱动程序都是以此程序为框架</p>
+<p>每个内核模块都有一个<code>xxx_init()</code>函数和一个<code>xxx_exit()</code>函数。<code>xxx_init()</code>函数在驱动加载的时候执行，<code>xxx_exit()</code>函数则在驱动移除的时候被调用。</p>
+<p><code>xxx_init()</code>函数让操作系统知道驱动具备什么样的能力，以及具体事件发生时应该调用驱动的哪个函数。<code>xxx_exit()</code>函数必须释放所有<code>xxx_init()</code>函数请求的资源。</p>
+<p><code>module_init()</code>宏和<code>module_exit()</code>宏负责将<code>init()</code>和<code>exit()</code>函数的符号导出，这样内核代码在加载模块时就能够识别这些函数入口。</p>
+<p><code>MODULE_LICENSE</code> 指定许可证，若无GPL许可证，加载该模块的内核将被标记为被污染且不被社区支持。</p>
+<p>编译文件<code>Makefile</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">obj-m:=helloworld_rpi.o</span><br><span class="line">KDIR:=/home/zephan/Learn/linux-kernel/linux-kernel/</span><br><span class="line">PWD?=$(shell pwd)</span><br><span class="line">all:</span><br><span class="line">        make -C $(KDIR) \</span><br><span class="line">                PATH=$(PATH):/home/zephan/Learn/linux-kernel/cross_compile_tool/gcc-linaro-7.5.0-2019.12-x86_6&gt;</span><br><span class="line">                ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \</span><br><span class="line">                M=$(PWD) modules</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">        make -C $(KDIR) \</span><br><span class="line">                PATH=$(PATH):/home/zephan/Learn/linux-kernel/cross_compile_tool/gcc-linaro-7.5.0-2019.12-x86_6&gt;</span><br><span class="line">                ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \</span><br><span class="line">                M=$(PWD) clean</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">        scp *.ko zephan-rpi@192.168.2.73:/home/zephan-rpi/</span><br></pre></td></tr></table></figure>
+
+<p><code>obj-m</code> 设定内核编译后的输出，注意helloworld_rpi必须与主程序文件名一致</p>
+<p><code>KDIR</code> 设定为下载的目标平台内核路径，因为交叉编译需要目标平台的内核文件，因此需要下载正确的内核文件</p>
+<p><code>PWD</code> 设定主程序与Makefile所在的目录</p>
+<p>接下来是编译时执行的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">make -C $(KDIR) \</span><br><span class="line">        PATH=$(PATH):/home/zephan/Learn/linux-kernel/cross_compile_tool/gcc-linaro-7.5.0-2019.12-x86_6&gt;</span><br><span class="line">        ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \</span><br><span class="line">        M=$(PWD) modules</span><br></pre></td></tr></table></figure>
+
+<p>设定<code>PATH</code>的目的是将交叉编译的编译器添加到系统环境变量中。因为是是跨平台编译，因此交叉编译的编译器肯定也是需要的。</p>
+<p>设定<code>ARCH</code>为<code>arm64</code>，因为我的树莓派是64位的系统。</p>
+<p><code>CROSS_COMPILE</code>设置使用的编译器，64位系统使用这个<code>aarch64-linux-gnu-</code>。</p>
+<p>其余不必解释了。</p>
+<p>有了如上两个文件后，即可开始编译驱动程序:</p>
+<p><code>make all</code></p>
+<p>之后将会发现目录下多了很多文件，其中最重要的是helloworld-rpi.ko，该文件就是编译好的驱动程序模块，将其发送到树莓派平台，使用：</p>
+<p><code>sudo insmod helloworld-rpi.ko</code></p>
+<p>即可加载模块，使用代码dmesg即可看到如下输出：</p>
+<p><code>hello world init</code></p>
+<p>这是因为内核在加载驱动时执行<code>hello_init()</code>函数。</p>
+<p>同理在执行 <code>sudo rmmod helloworld-rpi</code> 删除模块后，会发现内核卸载模块时也执行了<code>hello_exit()</code>函数</p>
+<p>总结来说，为其他架构或平台编译驱动程序时，最重要的是需要：</p>
+<p>1、目标平台的内核文件;</p>
+<p>2、目标平台的编译器;</p>
+<p>3、内核加载<code>xxx</code>模块时会执行<code>xxx_init()</code>函数，卸载时执行<code>xxx_exit()</code>函数</p>
+<h2 id="实验2，helloworld-with-param"><a href="#实验2，helloworld-with-param" class="headerlink" title="实验2，helloworld-with-param"></a>实验2，helloworld-with-param</h2><p>内核在加载驱动模块时，有时候需要设置一个参数，模块参数的定义通过<code>module_param()</code>宏实现。</p>
+<p>如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">static int num = 5;</span><br><span class="line">module_param(num, int, S_IRUGO);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>通过<code>module_param()</code>宏将变量num传入后，即可在<code>xxx_init()</code>内使用num变量，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">static int __init hello_init(void)</span><br><span class="line">&#123;</span><br><span class="line">        pr_info(&quot;hello world init and %d\n&quot;, num);</span><br><span class="line">        return  0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 Zephan ly
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

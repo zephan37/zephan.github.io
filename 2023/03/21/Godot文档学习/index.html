@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Godot文档学习 | 南树的个人博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Godot文档学习一，循序渐进1，场景与节点场景是按树的形式组织的节点集合 树结构，以单个节点为根。 你可以拆分你的项目 进入任意数量的场景。 此功能可帮助您分解和组织您的 游戏的不同组成部分。  2，创建实例Godot内每个场景都可以保存为一个.tscn文件。该文件可以理解为编程语言的类。这个类可以实例化出很多个实例。 用人话举例，我现在有个奥特曼的模具，用这个模具我制作出了欧布奥特曼和迪迦奥特">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Godot文档学习">
+<meta property="og:url" content="http://example.com/2023/03/21/Godot%E6%96%87%E6%A1%A3%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="南树的个人博客">
+<meta property="og:description" content="Godot文档学习一，循序渐进1，场景与节点场景是按树的形式组织的节点集合 树结构，以单个节点为根。 你可以拆分你的项目 进入任意数量的场景。 此功能可帮助您分解和组织您的 游戏的不同组成部分。  2，创建实例Godot内每个场景都可以保存为一个.tscn文件。该文件可以理解为编程语言的类。这个类可以实例化出很多个实例。 用人话举例，我现在有个奥特曼的模具，用这个模具我制作出了欧布奥特曼和迪迦奥特">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-21T14:57:42.000Z">
+<meta property="article:modified_time" content="2023-04-08T14:19:09.422Z">
+<meta property="article:author" content="Zephan ly">
+<meta property="article:tag" content="游戏开发 技术学习">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="南树的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Zephan ly</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="mail" target="_blank" href="/zephanly37@gmail.com" title="mail">mail</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/FreeBSD-Linux-Unix/" style="font-size: 10px;">FreeBSD Linux Unix</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">技术学习</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">游戏开发 技术学习</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">霞落见星月，雾影观曦光.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="mail" target="_blank" href="/zephanly37@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Godot文档学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/21/Godot%E6%96%87%E6%A1%A3%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2023-03-21T14:57:42.000Z" itemprop="datePublished">2023-03-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Godot文档学习
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" rel="tag">游戏开发 技术学习</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Godot文档学习"><a href="#Godot文档学习" class="headerlink" title="Godot文档学习"></a>Godot文档学习</h1><h2 id="一，循序渐进"><a href="#一，循序渐进" class="headerlink" title="一，循序渐进"></a>一，循序渐进</h2><h3 id="1，场景与节点"><a href="#1，场景与节点" class="headerlink" title="1，场景与节点"></a>1，场景与节点</h3><p>场景是按树的形式组织的节点集合 树结构，以单个节点为根。 你可以拆分你的项目 进入任意数量的场景。 此功能可帮助您分解和组织您的 游戏的不同组成部分。 </p>
+<h3 id="2，创建实例"><a href="#2，创建实例" class="headerlink" title="2，创建实例"></a>2，创建实例</h3><p>Godot内每个场景都可以保存为一个.tscn文件。该文件可以理解为编程语言的类。这个类可以实例化出很多个实例。</p>
+<p>用人话举例，我现在有个奥特曼的模具，用这个模具我制作出了欧布奥特曼和迪迦奥特曼。这个就称为场景（模具）的实例化（欧布和迪迦）。</p>
+<p>改变场景（.tscn）的属性即可改变所有实例的属性。即将模具的手都砍掉，之后做出的奥特曼肯定都没手。</p>
+<p>可以单独改变每个实例的属性，其不会改变其他实例的属性。我现在改变欧布做好的欧布奥特曼花纹，其当然不会改变迪迦的花纹。</p>
+<h2 id="3，我的第一个脚本"><a href="#3，我的第一个脚本" class="headerlink" title="3，我的第一个脚本"></a>3，我的第一个脚本</h2><p>脚本附加到节点并扩展其行，脚本继承节点的所有属性。这句话用人话说就是节点是一个人，我的脚本可以控制这个人的行为，让他走路，跳跃等，同时我的脚本还能让人再长出第三支手。</p>
+<p>编写脚本时我选择使用godot script，它的脚本文件叫做GDScript</p>
+<p>每个GDScript文件都隐式的是一个类。这意味着它可以被继承，也可以继承别人。在GDScript文件的开始使用<code>extends xxxx</code>即可以继承xxxx的东西。</p>
+<p>看如下脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">extends Sprite2D	//本脚本继承类Sprite2D的所有东西</span><br><span class="line"></span><br><span class="line">var speed = 400</span><br><span class="line">var angular_speed = PI</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func _process(delta):	</span><br><span class="line">    rotation += angular_speed * delta</span><br></pre></td></tr></table></figure>
+
+<p>_process()函数是每一帧都会调用的函数，因此涉及到需要每一帧需要更新的东西时需要该函数。</p>
+<p>delta参数是帧长度，使用该参数可保证process内的行动不受帧率变化所影响。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/04/08/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/03/git%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git使用</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 Zephan ly
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

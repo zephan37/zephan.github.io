@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>自用FreeBSD配置 | 南树的个人博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自用FreeBSD配置，图像界面使用dwm一、安装U盘安装没啥好说的，FreeBSD的安装很简单，主要参照如下： https:&#x2F;&#x2F;docs.freebsd.org&#x2F;zh-cn&#x2F;books&#x2F;handbook&#x2F;install&#x2F; https:&#x2F;&#x2F;book.bsdcn.org&#x2F;di-er-zhang-an-zhuang-freebsd&#x2F;di-ling-jie-tu-jie-an-zhuang.html 二">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自用FreeBSD配置">
+<meta property="og:url" content="http://example.com/2023/01/02/%E8%87%AA%E7%94%A8FreeBSD%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="南树的个人博客">
+<meta property="og:description" content="自用FreeBSD配置，图像界面使用dwm一、安装U盘安装没啥好说的，FreeBSD的安装很简单，主要参照如下： https:&#x2F;&#x2F;docs.freebsd.org&#x2F;zh-cn&#x2F;books&#x2F;handbook&#x2F;install&#x2F; https:&#x2F;&#x2F;book.bsdcn.org&#x2F;di-er-zhang-an-zhuang-freebsd&#x2F;di-ling-jie-tu-jie-an-zhuang.html 二">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-02T11:37:29.000Z">
+<meta property="article:modified_time" content="2023-04-08T14:19:09.422Z">
+<meta property="article:author" content="Zephan ly">
+<meta property="article:tag" content="FreeBSD Linux Unix">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="南树的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Zephan ly</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="mail" target="_blank" href="/zephanly37@gmail.com" title="mail">mail</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/FreeBSD-Linux-Unix/" style="font-size: 10px;">FreeBSD Linux Unix</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">技术学习</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">游戏开发 技术学习</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">霞落见星月，雾影观曦光.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="mail" target="_blank" href="/zephanly37@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-自用FreeBSD配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/01/02/%E8%87%AA%E7%94%A8FreeBSD%E9%85%8D%E7%BD%AE/" class="article-date">
+  	<time datetime="2023-01-02T11:37:29.000Z" itemprop="datePublished">2023-01-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      自用FreeBSD配置
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FreeBSD-Linux-Unix/" rel="tag">FreeBSD Linux Unix</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="自用FreeBSD配置，图像界面使用dwm"><a href="#自用FreeBSD配置，图像界面使用dwm" class="headerlink" title="自用FreeBSD配置，图像界面使用dwm"></a>自用FreeBSD配置，图像界面使用dwm</h1><h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><p>U盘安装没啥好说的，FreeBSD的安装很简单，主要参照如下：</p>
+<p><a target="_blank" rel="noopener" href="https://docs.freebsd.org/zh-cn/books/handbook/install/">https://docs.freebsd.org/zh-cn/books/handbook/install/</a></p>
+<p><a target="_blank" rel="noopener" href="https://book.bsdcn.org/di-er-zhang-an-zhuang-freebsd/di-ling-jie-tu-jie-an-zhuang.html">https://book.bsdcn.org/di-er-zhang-an-zhuang-freebsd/di-ling-jie-tu-jie-an-zhuang.html</a></p>
+<h2 id="二、网络配置"><a href="#二、网络配置" class="headerlink" title="二、网络配置"></a>二、网络配置</h2><p>安装好后开机进系统，为了后续的配置，第一件事情应该是考虑网络的配置。</p>
+<h3 id="1、网卡"><a href="#1、网卡" class="headerlink" title="1、网卡"></a>1、网卡</h3><h4 id="（1）列出可用网卡"><a href="#（1）列出可用网卡" class="headerlink" title="（1）列出可用网卡"></a>（1）列出可用网卡</h4><p>默认下执行如下命令：</p>
+<p><code>ifconfig</code></p>
+<p>此时正常来说应该会显示两张网卡，1是电脑本身的网卡，例如我的是em0，2是lo0，这个不用管他。</p>
+<h4 id="（2）使用网线"><a href="#（2）使用网线" class="headerlink" title="（2）使用网线"></a>（2）使用网线</h4><p>若有网线，可以直接将网线接入，此时应该可以接入网络。若网线接入后还是无法连接网络，可以使用：</p>
+<p><code>dhclient em0</code> 使用DHCP分配IP地址，分配后应该将可以接入网络。</p>
+<p>为了使系统重启后可以自动使用dhcp分配， 可以在&#x2F;etc&#x2F;rc.conf 中增加如下配置：</p>
+<p><code>ifconfig_em0=&quot;DHCP&quot;</code></p>
+<h3 id="2、wifi"><a href="#2、wifi" class="headerlink" title="2、wifi"></a>2、wifi</h3><h4 id="（1）列出无线网卡驱动"><a href="#（1）列出无线网卡驱动" class="headerlink" title="（1）列出无线网卡驱动"></a>（1）列出无线网卡驱动</h4><p>运行 <code>sysctl net.wlan.devices</code>，他会告诉你的无线网卡驱动，例如我的电脑输出为iwm0。如果冒号输出后边没有东西，那就是识别不了，下面不用看了。</p>
+<h4 id="（2）加载无线网卡驱动"><a href="#（2）加载无线网卡驱动" class="headerlink" title="（2）加载无线网卡驱动"></a>（2）加载无线网卡驱动</h4><p>后编辑&#x2F;boot&#x2F;loader.conf使开机加载wifi设备驱动：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if_iwm0_load=&quot;YES&quot; </span><br><span class="line">legal.realtek.license_ack=1</span><br></pre></td></tr></table></figure>
+
+<p>而后于&#x2F;etc&#x2F;rc.conf中加入以下使开机创建wlan0网络并使用DHCP分配IP</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wlans_iwm0=&quot;wlan0&quot;</span><br><span class="line">ifconfig_wlan0=&quot;WPA DHCP&quot;</span><br></pre></td></tr></table></figure>
+
+<p>重启电脑以使rc.conf生效</p>
+<p>重启后运行ifconfig，此时你可以看到wlan0网卡已经可以使用了。</p>
+<h4 id="（3）使用wifi"><a href="#（3）使用wifi" class="headerlink" title="（3）使用wifi"></a>（3）使用wifi</h4><p>搜索wifi</p>
+<p><code>ifconfig wlan0 up scan</code></p>
+<p>连接wifi</p>
+<p>编辑&#x2F;etc&#x2F;wpa_supplicant.conf，加入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line">  ssid=&quot;wifi名称&quot;</span><br><span class="line">  psk=&quot;wifi密码&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启后，你会发现wifi已经自动连接上，并且可以愉快地接入网络了。</p>
+<p>任何时候当出现无法接入网络时，使用service netif restart重启网络，一般问题即可解决</p>
+<h2 id="三、换源"><a href="#三、换源" class="headerlink" title="三、换源"></a>三、换源</h2><h3 id="1、设置中科大源"><a href="#1、设置中科大源" class="headerlink" title="1、设置中科大源"></a>1、设置中科大源</h3><p>虽然现在可以连接网络了，但是使用pkg等安装软件时，速度是在是慢的可怜，此时应该先换源，个人最喜欢使用中科大源：</p>
+<p>pkg源设置依据官方指南：</p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/help/freebsd-pkg.html">https://mirrors.ustc.edu.cn/help/freebsd-pkg.html</a></p>
+<h2 id="三、sudo设置"><a href="#三、sudo设置" class="headerlink" title="三、sudo设置"></a>三、sudo设置</h2><p>FreeBSD 基本系统默认不自带 <code>sudo</code> 命令，需要使用 <code>root</code> 权限自行安装：</p>
+<p><code>pkg install sudo</code></p>
+<p>sudo 可以解析&#x2F;usr&#x2F;local&#x2F;etc&#x2F;sudoers.d&#x2F; 目录中的文件，且目录中的文件是按字母顺序加载的，. 或 ~ 开头的文件会被跳过。文件名应该以双字母开头，例如 01_foo，</p>
+<p>因此在&#x2F;usr&#x2F;local&#x2F;etc&#x2F;sudoer.d中建立“00_用户名”的文件，代表这个文件最先被载入，然后在其中输入：</p>
+<p><code>用户名 ALL=(ALL) ALL</code> </p>
+<p>意思是让某用户可以执行所以命令</p>
+<h2 id="四、配置显卡驱动"><a href="#四、配置显卡驱动" class="headerlink" title="四、配置显卡驱动"></a>四、配置显卡驱动</h2><p>我的电脑是intel的核显，其他显卡可以参考<a target="_blank" rel="noopener" href="https://book.bsdcn.org/di-er-zhang-an-zhuang-freebsd/di-jiu-jie-wu-li-ji-xia-xian-ka-de-pei-zhi.html">https://book.bsdcn.org/di-er-zhang-an-zhuang-freebsd/di-jiu-jie-wu-li-ji-xia-xian-ka-de-pei-zhi.html</a></p>
+<p>安装驱动：</p>
+<p><code>pkg install drm-kmod</code></p>
+<p>开机加载驱动：</p>
+<p>编辑&#x2F;etc&#x2F;rc.conf，加入：</p>
+<p><code>kld_list=&quot;i915kms&quot;</code></p>
+<p>开启硬解：</p>
+<p><code>pkg install libva-intel-driver mesa-libs mesa-dri</code></p>
+<p>开启亮度调节：</p>
+<p><code>pkg install intel-backlight</code></p>
+<p>而后重启</p>
+<h2 id="五、配置声卡驱动"><a href="#五、配置声卡驱动" class="headerlink" title="五、配置声卡驱动"></a>五、配置声卡驱动</h2><p>先加载声卡驱动：</p>
+<p><code>sysrc snd_hda=&quot;YES&quot;</code></p>
+<p>后安装pulseaudio与pamixer</p>
+<p><code>sudo pkg install pulseaudio pamixer </code></p>
+<p>然后重启。</p>
+<h2 id="六、安装xorg"><a href="#六、安装xorg" class="headerlink" title="六、安装xorg"></a>六、安装xorg</h2><p>安装</p>
+<p><code>pkg install xorg</code></p>
+<p>之后将个人用户加入你的用户加入video组。<br><code>pw groupmod video -m username</code></p>
+<p>配置</p>
+<p>执行sudo <code>Xorg -configure</code>，现在应该会在&#x2F;root&#x2F;下生成xorg.conf.new文件</p>
+<p>然后将xorg.conf.new复制到&#x2F;etc&#x2F;X11下</p>
+<p><code>sudo cp /root/xorg.conf.new /etc/X11/xorg.conf</code> </p>
+<p>编辑&#x2F;etc&#x2F;X11&#x2F;xorg.conf，在Section “Device”下加入以下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Option &quot;AccelMethod&quot; &quot;sna&quot;</span><br><span class="line">Option &quot;TearFree&quot; &quot;true&quot;</span><br></pre></td></tr></table></figure>
+
+<p>作用是解决xorg下intel的屏幕撕裂问题，同时发现，这也能解决掉使用picom时很卡很卡的现象</p>
+<h2 id="七、dwm"><a href="#七、dwm" class="headerlink" title="七、dwm"></a>七、dwm</h2><h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p>从<a target="_blank" rel="noopener" href="http://www.suckless.orgia下载dwm源码dwm-x.x.tar.gz/">www.suckless.orgia下载dwm源码dwm-x.x.tar.gz</a></p>
+<h3 id="2、解压与移动"><a href="#2、解压与移动" class="headerlink" title="2、解压与移动"></a>2、解压与移动</h3><p><code>tar -zxvf dwm-x.x.tar.gz</code></p>
+<p>将解压好后的文件命名为dwm，并移动到.confign文件夹内</p>
+<h3 id="3、安装"><a href="#3、安装" class="headerlink" title="3、安装"></a>3、安装</h3><h4 id="（1）、安装rofi与alacritty"><a href="#（1）、安装rofi与alacritty" class="headerlink" title="（1）、安装rofi与alacritty"></a>（1）、安装rofi与alacritty</h4><p><code>sudo pkg install rofi alacritty</code></p>
+<h4 id="（2）、安装dwm"><a href="#（2）、安装dwm" class="headerlink" title="（2）、安装dwm"></a>（2）、安装dwm</h4><p><code>cd .config/dwm</code></p>
+<p>修改config.mk内的X11INC、X11LIB与FREETYPEINC为如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X11INC = /usr/local/include</span><br><span class="line">X11LIB = /usr/local/lib</span><br><span class="line">FREETYPEINC = /usr/local/include/freetype2</span><br></pre></td></tr></table></figure>
+
+<p>修改config.def.h为如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">static const char *dmenucmd[] = &#123;&quot;rofi&quot;, &quot;-show&quot;, &quot;run&quot;, NULL&#125;;</span><br><span class="line">static const char *termcmd[] = &#123;&quot;alacritty&quot;, NULL&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>以上将程序启动器设置为rofi，将终端设置为alacritty</p>
+<p>而后执行</p>
+<p><code>sudo make install</code></p>
+<p>执行完毕若无出错则dwm安装完成</p>
+<h3 id="4、启动"><a href="#4、启动" class="headerlink" title="4、启动"></a>4、启动</h3><p>编辑.xinitrc，加入</p>
+<p><code>exec dwm</code></p>
+<p>现在就可以<code>startx</code>打开dwm了</p>
+<h2 id="八、dwm状态栏"><a href="#八、dwm状态栏" class="headerlink" title="八、dwm状态栏"></a>八、dwm状态栏</h2><p>默认安装好后的dwm是不包含状态栏的，这在日常使用中是很不方便的。</p>
+<p>这里我使用我自己写的dwm状态栏工具</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd .config</span><br><span class="line">git clone https://github.com/zephan37/FreeBSD_lydwmbar.git</span><br><span class="line">cd FreeBSD_lydwmbar</span><br><span class="line">gcc -o ly-dwm-status ly-dwm-status.c sound.c backlight.c battery.c date.c network.c resource.c config.h -lX11 -lsysinfo</span><br></pre></td></tr></table></figure>
+
+<p>经以上，现在我的dwm状态栏工具ly-dwm-status已经安装好了</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>编辑.xinitc加入如下</p>
+<p><code>$HOME/.config/FreeBSD_lydwmbar/ly-dwm-status &amp;</code></p>
+<p>然后重启</p>
+<h2 id="九、代理服务器"><a href="#九、代理服务器" class="headerlink" title="九、代理服务器"></a>九、代理服务器</h2><p>经过startx进入图像化界面后，先配置代理</p>
+<h3 id="v2ray"><a href="#v2ray" class="headerlink" title="v2ray"></a>v2ray</h3><p>亲测，在写此文时pkg install v2ray安装的v2ray无法使用，唯一的办法是直接使用二进制可执行文件</p>
+<h4 id="（1）安装v2ray"><a href="#（1）安装v2ray" class="headerlink" title="（1）安装v2ray"></a>（1）安装v2ray</h4><p>v2ray-freebsd-64.zip，该文件可与github v2ray的官方仓库内找到</p>
+<p><code>https://github.com/v2fly/v2ray-core/releases/download/v5.1.0/v2ray-freebsd-64.zip</code></p>
+<p>解压与安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir v2ray</span><br><span class="line">$ mv v2ray-freebsd-64.zip v2ray</span><br><span class="line">$ cd v2ray </span><br><span class="line">$ unzip v2ray-freebsd-64.zip v2ray</span><br><span class="line">$ cd ..</span><br><span class="line">$ sudo mkdir /usr/local/bin/v2ray</span><br><span class="line">$ cp v2ray/* /usr/local/bin/v2ray/</span><br></pre></td></tr></table></figure>
+
+<h4 id="（2）配置v2ray"><a href="#（2）配置v2ray" class="headerlink" title="（2）配置v2ray"></a>（2）配置v2ray</h4><p>将你的v2ray配置文件复制到v2ray文件夹内</p>
+<p><code>cp config.json /usr/local/bin/v2ray/</code></p>
+<h4 id="（3）启动v2ray"><a href="#（3）启动v2ray" class="headerlink" title="（3）启动v2ray"></a>（3）启动v2ray</h4><p>与root下</p>
+<p><code>/usr/local/bin/v2ray/v2ray run  &amp; </code></p>
+<h4 id="（4）系统设置代理"><a href="#（4）系统设置代理" class="headerlink" title="（4）系统设置代理"></a>（4）系统设置代理</h4><p><code>export http_proxy=&quot;http://127.0.0.1:port&quot;</code></p>
+<p><code>export http_proxy=&quot;http://127.0.0.1:port&quot;</code></p>
+<h4 id="（5）设置v2ray开机自启"><a href="#（5）设置v2ray开机自启" class="headerlink" title="（5）设置v2ray开机自启"></a>（5）设置v2ray开机自启</h4><p>也可以在<code>.xinitrc</code>内加入如下使得开机启用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=&quot;http://127.0.0.1:port&quot;</span><br><span class="line">export http_proxy=&quot;http://127.0.0.1:port&quot;</span><br><span class="line">/usr/local/bin/v2ray/v2ray run  &amp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="十、本地化"><a href="#十、本地化" class="headerlink" title="十、本地化"></a>十、本地化</h2><h3 id="1、安装wqy字体"><a href="#1、安装wqy字体" class="headerlink" title="1、安装wqy字体"></a>1、安装wqy字体</h3><p>startx进入图像界面后会发现中文是乱码，安装wqy字体解决</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install wqy-fonts</span><br></pre></td></tr></table></figure>
+
+<p>因为第八步已经设置了代理，所以这里速度很快</p>
+<p>安装好后中文乱码即可解决</p>
+<h3 id="2、系统本地化设置"><a href="#2、系统本地化设置" class="headerlink" title="2、系统本地化设置"></a>2、系统本地化设置</h3><p>设置LANG</p>
+<p>我使用的是.xinitrc来加载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LANG=zh_CN.UTF-8</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3、安装中文输入法"><a href="#3、安装中文输入法" class="headerlink" title="3、安装中文输入法"></a>3、安装中文输入法</h3><p>选用ibus输入法时，ibus输入法在使用wine程序时会出现输入中文延迟的问题。<br>选用fcitx输入法时，fcitx在使用linux兼容层程序时也会出现输入延迟的问题，那没得选了，只能用scim。</p>
+<p>选用scim时，输入法选用zh-scim-fcitx，</p>
+<p>安装scim</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install scim zh-scim-fcitx</span><br></pre></td></tr></table></figure>
+
+<p>配置scim全局变量与启动scim</p>
+<p>在.xinitrc中加入以下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export XMODIFIERS=&#x27;@im=SCIM&#x27;</span><br></pre></td></tr></table></figure>
+<p>当运行xfce等桌面环境时，ibus应会自动启动，有时候需要自定义ibus的自启，命令如下：<br><code>ibus-daemon --xim -d</code></p>
+<p>重启</p>
+<p>使用</p>
+<p>重启后使用 <code>scim-setup</code>来配置输入法，配置好后享受中文输入法吧</p>
+<h2 id="十一、linux兼容层"><a href="#十一、linux兼容层" class="headerlink" title="十一、linux兼容层"></a>十一、linux兼容层</h2><p>通过兼容linux，就可以使用一些Linux程序，例如chrome等</p>
+<h3 id="1、安装ubuntu兼容层"><a href="#1、安装ubuntu兼容层" class="headerlink" title="1、安装ubuntu兼容层"></a>1、安装ubuntu兼容层</h3><p>一开始，先将<code>linux_enable=&quot;YES&quot;</code>写入 <code>/etc/rc.conf</code></p>
+<h4 id="（1）构建ubuntu20-04"><a href="#（1）构建ubuntu20-04" class="headerlink" title="（1）构建ubuntu20.04"></a>（1）构建ubuntu20.04</h4><p>注意不能使用debian，因为debian会出现程序无法访问文件系统的情况；也不能使用ubuntu18.04，因为ubuntu18.04<br>在使用chrome等程序时会出现无法改变窗口大小的情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install debootstrap</span><br><span class="line">debootstrap focal /compat/ubuntu https://mirrors.ustc.edu.cn/ubuntu/</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h4 id="（2）挂载文件系统"><a href="#（2）挂载文件系统" class="headerlink" title="（2）挂载文件系统"></a>（2）挂载文件系统</h4><p>将如下写入到&#x2F;etc&#x2F;fstab:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">devfs           /compat/ubuntu/dev      devfs           rw,late                      0       0</span><br><span class="line">tmpfs           /compat/ubuntu/dev/shm  tmpfs           rw,late,size=1g,mode=1777    0       0</span><br><span class="line">fdescfs         /compat/ubuntu/dev/fd   fdescfs         rw,late,linrdlnk             0       0</span><br><span class="line">linprocfs       /compat/ubuntu/proc     linprocfs       rw,late                      0       0</span><br><span class="line">linsysfs        /compat/ubuntu/sys      linsysfs        rw,late                      0       0</span><br><span class="line">/tmp            /compat/ubuntu/tmp      nullfs          rw,late                      0       0</span><br><span class="line">/home           /compat/ubuntu/home     nullfs          rw,late                      0       0</span><br></pre></td></tr></table></figure>
+
+<p>注意以上的</p>
+<p><code>/tmp            /compat/ubuntu/tmp      nullfs          rw,late                      0       0</code></p>
+<p><code>/home           /compat/ubuntu/home     nullfs          rw,late                      0       0</code></p>
+<p>很重要，其将FreeBSD的tmp与home映射到Linux内，其中tmp内涉及到硬件的映射，是很关键的，它使得Linux能和主机FreeBSD共享音频和X11套接字</p>
+<h4 id="（3）检查挂载"><a href="#（3）检查挂载" class="headerlink" title="（3）检查挂载"></a>（3）检查挂载</h4><p>然后检查挂载会不会出错：</p>
+<p><code>mount -al</code></p>
+<h3 id="3、兼容层ubuntu配置"><a href="#3、兼容层ubuntu配置" class="headerlink" title="3、兼容层ubuntu配置"></a>3、兼容层ubuntu配置</h3><p>先chroot进入ubuntu系统：</p>
+<p><code>sudo chroot /compat/ubuntu /bin/bash</code></p>
+<h4 id="（1）换源"><a href="#（1）换源" class="headerlink" title="（1）换源"></a>（1）换源</h4><p>按如下换源</p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/help/ubuntu.html">https://mirrors.ustc.edu.cn/help/ubuntu.html</a></p>
+<h4 id="（2）本地化"><a href="#（2）本地化" class="headerlink" title="（2）本地化"></a>（2）本地化</h4><p>配置语言环境和时区：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg-reconfigure locales</span><br><span class="line">dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure>
+
+<p>安装中文字体</p>
+<p><code>apt install fonts-wqy-microhei</code></p>
+<p><code>apt install fonts-wqy-zenhei</code></p>
+<p>中文输入法配置</p>
+<p>要在兼容层中使用中文输入法，首先需要在主机FreeBSD内配置好输入法，例如ibus或fcitx或scim，这里以scim为例</p>
+<p>编辑&#x2F;etc&#x2F;profile文件，复制.xinitc中ibus的全局变量配置部分，并加入&#x2F;etc&#x2F;profile，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export XMODIFIERS=&#x27;@im=SCIM&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>现在执行 <code>source /etc/profile</code>，你可以在兼容层中安装gedit程序测试输入，你现在应该能发现兼容层下也能输入中文输入法了</p>
+<h4 id="（3）声音配置"><a href="#（3）声音配置" class="headerlink" title="（3）声音配置"></a>（3）声音配置</h4><p>ubuntu是FreeBSD内的一个子系统，经测试一开始声音无法使用，按如下配置开启声音：</p>
+<p>ubuntu先安装pulseaudio</p>
+<p><code>apt install pulseaudio</code></p>
+<p>于主机FreeBSD上编辑&#x2F;usr&#x2F;local&#x2F;etc&#x2F;pulse&#x2F;system.pa</p>
+<p><code>load-module module-native-protocol-unix auth-anonymous=1 socket=/tmp/pulse-native</code></p>
+<p>它告诉如何命名 Pulseaudio 套接字 ( &#x2F;tmp&#x2F;pulse-native)。稍后 Linux 兼容层中配置 Pulseaudio 时将需要这些信息。</p>
+<p>主机FreeBSD上pulseaudio软件包不附带rc脚本，因此需要我们创建一个，创建文件&#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;pulseaudio，该脚本用来启动pulseaudio服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line"># PROVIDE: pulseaudio</span><br><span class="line"># REQUIRE: DAEMON FILESYSTEMS</span><br><span class="line"># KEYWORD: nojail shutdown</span><br><span class="line"></span><br><span class="line">. /etc/rc.subr</span><br><span class="line"></span><br><span class="line">name=&quot;pulseaudio&quot;</span><br><span class="line">desc=&quot;Start the Pulseaudio server&quot;</span><br><span class="line">rcvar=&quot;pulseaudio_enable&quot;</span><br><span class="line">pulseaudio_bin=&quot;/usr/local/bin/$&#123;name&#125;&quot;</span><br><span class="line">pulseaudio_pidfile=&quot;/var/run/pulse/pid&quot;</span><br><span class="line">start_cmd=&quot;$&#123;name&#125;_start&quot;</span><br><span class="line">stop_cmd=&quot;$&#123;name&#125;_stop&quot;</span><br><span class="line">load_rc_config &quot;$&#123;name&#125;&quot;</span><br><span class="line"></span><br><span class="line">pulseaudio_start()</span><br><span class="line">&#123;</span><br><span class="line">    $&#123;pulseaudio_bin&#125; --system --disallow-module-loading &amp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pulseaudio_stop()</span><br><span class="line">&#123;</span><br><span class="line">    if [ -f &quot;$&#123;pulseaudio_pidfile&#125;&quot; ]</span><br><span class="line">    then</span><br><span class="line">        kill $(cat &quot;$&#123;pulseaudio_pidfile&#125;&quot;)</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run_rc_command &quot;$1&quot;</span><br></pre></td></tr></table></figure>
+
+<p>注意赋予它可执行权限 <code>chmod +x /usr/local/etc/rc.d/pulseaudio</code></p>
+<p>而后让他在开机启动：</p>
+<p>编辑&#x2F;etc&#x2F;rc.conf</p>
+<p><code>pulseaudio_enable=&quot;YES&quot;</code></p>
+<p>重启</p>
+<p>经如上，pulseaudio启用的条件已经具备，ubuntu子系统只需配置全局变量：</p>
+<p><code>export PULSE_SERVER=unix:/tmp/pulse-native</code>即可开启声音</p>
+<p>但是当我们使用ubuntu子系统的程序时，总不能每次得先切换到子系统配置全局变量吧，这样很麻烦，于是我们可以在ubuntu子系统上的&#x2F;etc&#x2F;profile中配置全局变量：</p>
+<p><code>export PULSE_SERVER=unix:/tmp/pulse-native</code></p>
+<p>&#x2F;etc&#x2F;bash.bashrc文件会在我们使用bash自动配置该全局变量</p>
+<p>以后需要给ubuntu子系统配置全局变量时，也可以在此文件配置，例如要配置ubuntu子系统代理时，也可在&#x2F;etc&#x2F;profile文件中配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=&quot;http://127.0.0.1:port&quot;</span><br><span class="line">export http_proxy=&quot;http://127.0.0.1:port&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="（5）添加个人用户"><a href="#（5）添加个人用户" class="headerlink" title="（5）添加个人用户"></a>（5）添加个人用户</h4><p>ubuntu子系统默认是root环境下，但以root启动程序会有风险，添加个人用户用以启动程序，例如我这里创建一个linux-zephan的用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser linux-zephan</span><br></pre></td></tr></table></figure>
+<p>为了让创建的个人用户使用硬件加速，需要将该用户加入video组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpasswd -a linux-zephan video</span><br></pre></td></tr></table></figure>
+
+
+<p>最后，于主机FreeBSD上编辑.xinitrc，加入</p>
+<p><code>xhost +</code></p>
+<p>以上完成</p>
+<h2 id="十二、使用Linux兼容层运行Linux应用，以chrome为例"><a href="#十二、使用Linux兼容层运行Linux应用，以chrome为例" class="headerlink" title="十二、使用Linux兼容层运行Linux应用，以chrome为例"></a>十二、使用Linux兼容层运行Linux应用，以chrome为例</h2><h3 id="1、进入ubuntu环境"><a href="#1、进入ubuntu环境" class="headerlink" title="1、进入ubuntu环境"></a>1、进入ubuntu环境</h3><p><code>sudo chroot /compat/ubuntu /bin/bash</code></p>
+<h3 id="2、安装google-chrome"><a href="#2、安装google-chrome" class="headerlink" title="2、安装google-chrome"></a>2、安装google-chrome</h3><p><code>apt install google-chrome.deb</code></p>
+<h3 id="3、在ubuntu子系统中创建chrome启动脚本-x2F-bin-x2F-FreeBSD-chrome"><a href="#3、在ubuntu子系统中创建chrome启动脚本-x2F-bin-x2F-FreeBSD-chrome" class="headerlink" title="3、在ubuntu子系统中创建chrome启动脚本&#x2F;bin&#x2F;FreeBSD-chrome"></a>3、在ubuntu子系统中创建chrome启动脚本&#x2F;bin&#x2F;FreeBSD-chrome</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">export DISPLAY=:0			#ubuntu子系统默认是root环境下，但以root启动程序会有风险。添加此变量是为了后续可以使用个人用户启动该程序</span><br><span class="line">google-chrome-stable --no-sandbox --no-zygote --in-process-gpu 	#启动chrome</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、退出ubuntu环境，回到FreeBSD环境，于-x2F-usr-x2F-local-x2F-bin-x2F-下创建文件夹linux-app"><a href="#4、退出ubuntu环境，回到FreeBSD环境，于-x2F-usr-x2F-local-x2F-bin-x2F-下创建文件夹linux-app" class="headerlink" title="4、退出ubuntu环境，回到FreeBSD环境，于&#x2F;usr&#x2F;local&#x2F;bin&#x2F;下创建文件夹linux-app"></a>4、退出ubuntu环境，回到FreeBSD环境，于&#x2F;usr&#x2F;local&#x2F;bin&#x2F;下创建文件夹linux-app</h3><p><code>mkdir -p /usr/local/bin/linux-app</code></p>
+<h3 id="5、于linux-app文件夹内创建chrome启动脚本linux-chrome-app，如下："><a href="#5、于linux-app文件夹内创建chrome启动脚本linux-chrome-app，如下：" class="headerlink" title="5、于linux-app文件夹内创建chrome启动脚本linux-chrome-app，如下："></a>5、于linux-app文件夹内创建chrome启动脚本linux-chrome-app，如下：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chroot /compat/ubuntu /bin/bash -c &quot;su -c /bin/FreeBSD-chrome - linux-zephan&quot;</span><br></pre></td></tr></table></figure>
+
+<p>chroot &#x2F;compat&#x2F;ubuntu 为切换到ubuntu root的意思，意思是后面的程序是运行于ubuntu下</p>
+<p>&#x2F;bin&#x2F;bash -c 意思是使用ubuntu的bash</p>
+<p>su -c &#x2F;bin&#x2F;FreeBSD-chrome - linux-zephan的意思是使用用户linux-zephan来运行脚本&#x2F;bin&#x2F;FreeBSD</p>
+<p>赋予可执行权限：</p>
+<p><code>chmod +x /usr/local/bin/linux-app/linux-chrome-app</code></p>
+<p>此时使用 <code>sudo /usr/local/bin/linux-app/linux-chrome-app </code>即可以看到linux兼容层下的chrome被打开了。</p>
+<h3 id="6、FreeBSD中让个人用户使用linux兼容层的程序"><a href="#6、FreeBSD中让个人用户使用linux兼容层的程序" class="headerlink" title="6、FreeBSD中让个人用户使用linux兼容层的程序"></a>6、FreeBSD中让个人用户使用linux兼容层的程序</h3><p>现在使用 <code>sudo /usr/local/bin/linux-app/linux-chrome-app </code>即可打开linux兼容层下的chrome了，但是我不想使用root才能运行linux下的程序，因为我使用rofi作为程序启动器，rofi无法启动root程序，因此可以作如下配置：</p>
+<h4 id="（1）、创建启动脚本"><a href="#（1）、创建启动脚本" class="headerlink" title="（1）、创建启动脚本"></a>（1）、创建启动脚本</h4><p>于&#x2F;usr&#x2F;local&#x2F;bin中创建linux chome文件，为了方便区分，该文件使用“linux-程序名”的命名格式，文件中添加如下内容：</p>
+<p><code>sudo /usr/local/bin/linux-app/linux-chrome-app</code></p>
+<p>并赋予可执行权限</p>
+<h4 id="（2）、使启动脚本具有免密启动的权限"><a href="#（2）、使启动脚本具有免密启动的权限" class="headerlink" title="（2）、使启动脚本具有免密启动的权限"></a>（2）、使启动脚本具有免密启动的权限</h4><p>在&#x2F;usr&#x2F;local&#x2F;etc&#x2F;sudoers.d&#x2F;文件夹下创建01_linux-app文件，并加入以下内容：</p>
+<p><code>username ALL=(root) NOPASSWD:/usr/local/bin/linux-app/linux-chrome-app</code></p>
+<p>现在，你应该可以使用linux-chrome命令打开chrome了，享受它吧！</p>
+<p>若是以后还想添加其他免密启动程序，直接在01_linux-app内添加就好，例如下：</p>
+<p><code>username ALL=(root) NOPASSWD:/usr/local/bin/linux-app/linux-chrome-app，/usr/local/bin/linux-qq</code></p>
+<p>如上是添加一个linux app的过程，若是以后想要添加linux下的兼容层程序，按照如上配置chrome的过程配置即可</p>
+<p>以上是安装一个FreeBSD的过程，下文是使用过程中的一些问题的记录</p>
+<h1 id="十三、一些问题记录"><a href="#十三、一些问题记录" class="headerlink" title="十三、一些问题记录"></a>十三、一些问题记录</h1><h2 id="耳机与扬声器的切换问题"><a href="#耳机与扬声器的切换问题" class="headerlink" title="耳机与扬声器的切换问题"></a>耳机与扬声器的切换问题</h2><p>在主机FreeBSD下的程序，只需要通过<code>sudo sysctl hw.snd.default_unit=1</code>即可由扬声器切换到耳机，&#x3D;0则切回扬声器。<br>但是对于运行于linux兼容层下的程序，事实上我的大部分程序都是运行于兼容层下的，其声音使用的是一开始主机上pulseaudio启动时创建的套接字&#x2F;tmp&#x2F;pulse-native，这会导致虽然FreeBSD主机切换到了耳机，但是这个套接字并没有重建，导致linux兼容层下的程序声音输入依旧为扬声器。<br>解决的办法也很简单，当使用<code>sudo sysctl hw.snd.default_unit=1</code>将主机声音输出切换到耳机时，顺便重启pulseaudio服务，重启后即可发现linux兼容层下的程序声音输入也切换了</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/03/git%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          git使用
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 Zephan ly
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
