@@ -152,6 +152,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/18/hello-world/" class="article-date">
+  	<time datetime="2023-04-18T13:56:02.154Z" itemprop="datePublished">2023-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/18/hello-world/">
+        Hello World
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-嵌入式linux设备驱动程序开发学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -277,7 +344,24 @@
 <p>杂项设备驱动很简单，其完整代码框架如下例：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/cdev.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/fs.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/device.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/miscdevice.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DEVICE_NAME <span class="string">&quot;mydev&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">my_dev_open</span><span class="params">(<span class="keyword">struct</span> inode *inode, <span class="keyword">struct</span> file *file)</span></span><br><span class="line">&#123;</span><br><span class="line">	pr_info(<span class="string">&quot;my_dev_open() is called.\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">my_dev_close</span><span class="params">(<span class="keyword">struct</span> inode *inode, <span class="keyword">struct</span> file *file)</span></span><br><span class="line">&#123;</span><br><span class="line">	pr_info(<span class="string">&quot;my_dev_close() is called.\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">long</span> <span class="title function_">my_dev_ioctl</span><span class="params">(<span class="keyword">struct</span> file *file, <span class="type">unsigned</span> <span class="type">int</span> cmd, <span class="type">unsigned</span> <span class="type">long</span> arg)</span></span><br><span class="line">&#123;</span><br><span class="line">	pr_info(<span class="string">&quot;my_dev_ioctl() is called. cmd = %d, arg = %ld\n&quot;</span>, cmd, arg);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义设备文件操作集</span></span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">file_operations</span> <span class="title">my_dev_ops</span> =</span> &#123;</span><br><span class="line">	.owner = THIS_MODULE,</span><br><span class="line">	.open = my_dev_open,</span><br><span class="line">	.release = my_dev_close,</span><br><span class="line">	.unlocked_ioctl = my_dev_ioctl,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个杂项设备</span></span><br><span class="line"><span class="type">static</span> <span class="class"><span class="keyword">struct</span> <span class="title">miscdevice</span> <span class="title">mymiscdevice</span> =</span> &#123;</span><br><span class="line">	.minor = MISC_DYNAMIC_MINOR,		<span class="comment">//动态分配从设备</span></span><br><span class="line">	.name = DEVICE_NAME,				<span class="comment">//设置设备名</span></span><br><span class="line">	.fops = &amp;my_dev_ops,				<span class="comment">//绑定杂项设备与文件操作函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">hello_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//注册杂项设备</span></span><br><span class="line">	<span class="keyword">if</span>((misc_register(&amp;mymiscdevice)) != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		pr_err(<span class="string">&quot;could not register the misc device mydev\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;	</span><br><span class="line"></span><br><span class="line">	pr_info(<span class="string">&quot;misc chr driver correctly\n&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span>	<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __exit <span class="title function_">hello_exit</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	pr_info(<span class="string">&quot;hello world exit\n&quot;</span>);</span><br><span class="line">	misc_deregister(&amp;mymiscdevice);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module_init(hello_init);</span><br><span class="line">module_exit(hello_exit);</span><br><span class="line"></span><br><span class="line">MODULE_LICENSE(<span class="string">&quot;GPL&quot;</span>);</span><br><span class="line">MODULE_AUTHOR(<span class="string">&quot;Zephan ly zephanly37@gmail.com&quot;</span>);</span><br><span class="line">MODULE_DESCRIPTION(<span class="string">&quot;this is a print out hello world module&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-
+<h2 id="Linux设备模型"><a href="#Linux设备模型" class="headerlink" title="Linux设备模型"></a>Linux设备模型</h2><p>按照此前的设备驱动程序框架，相当于把硬件信息都写入了驱动程序内，根据某个硬件编写的驱动只要修改了一下引脚接口，这个驱动代码就得重新修改才能使用，这显然是不合理的，为此Linux提供了设备驱动模型。</p>
+<h3 id="1，什么是Linux设备模型？"><a href="#1，什么是Linux设备模型？" class="headerlink" title="1，什么是Linux设备模型？"></a>1，什么是Linux设备模型？</h3><p>设备（device）：挂载在总线上的实际的物理设备；</p>
+<p>驱动（driver）：物理设备的驱动软件，负责初始化某个设备与操纵该设备并获得某种功能；</p>
+<p>总线（bus）：负责管理挂载的设备与驱动，最主要的作用是将设备与驱动进行匹配。</p>
+<p>由如上的三个概念，可组成如下的设备模型：</p>
+<p><img src="https://doc.embedfire.com/linux/imx6/driver/zh/latest/_images/linux_device_model02.png" alt="设备驱动模型"></p>
+<p>1，总线bus维护着两个链表，分别管理着设备与驱动；</p>
+<p>2，当我们向系统注册一个设备时，设备管理链表会被插入新设备，向系统注册驱动同理；</p>
+<p>3，不管是设备还是驱动，当它们被注册时，总线都会使用match方法对新插入的设备或驱动进行匹配（最简单的就是匹配名字）；</p>
+<p>4，驱动与设备匹配成功后会调用驱动中的probe方法，在方法中一般可获取设备的硬件资源或者实现某种具体的功能，这个可自定义；</p>
+<p>5，移除设备或驱动时，调用remove方法释放资源。</p>
+<h3 id="2，Linux设备模型在文件系统中的对应"><a href="#2，Linux设备模型在文件系统中的对应" class="headerlink" title="2，Linux设备模型在文件系统中的对应"></a>2，Linux设备模型在文件系统中的对应</h3><p>linux的哲学即一切皆文件，如上的设备模型在文件系统内会反映出如下结果：</p>
+<p>1，<code>/sys/bus/</code> 该目录下存放着已经注册好的总线类型，例如<code>i2c</code>，<code>spi</code>，<code>usb</code>，<code>hid</code>等总线协议，每种协议下又都会有<code>devices</code>和<code>drivers</code>两个目录，<code>devices</code>目录下是该类型总线协议下的所有设备（这里的设备其实都是符号链接，真正指向的是<code>/sys/devices/</code>下），<code>drivers</code>下是所有注册在这个类型总线协议上的驱动。</p>
+<p>2，<code>/sys/devices/</code>目录下是全局设备结构体系，包含所有被发现的注册在各种总线上的各种物理设备。</p>
+<p>3，<code>/sys/class</code>目录下也包含所有注册在kernel里面的设备类型，但这是按照设备功能进行分类，例如鼠标，不管它挂载在哪条总线，使用哪种总线协议，都是归到<code>/sys/class/input</code>下。</p>
+<p>如上统一即可形成如下拓扑图，反映出Linux设备模型在文件系统中的实体：</p>
+<p><img src="https://doc.embedfire.com/linux/imx6/driver/zh/latest/_images/linux_device_model01.png" alt="设备驱动模型"></p>
+<h3 id="3，代码实践"><a href="#3，代码实践" class="headerlink" title="3，代码实践"></a>3，代码实践</h3>
       
     </div>
     
@@ -288,73 +372,6 @@
 		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
 	</div>
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/04/08/hello-world/" class="article-date">
-  	<time datetime="2023-04-08T14:19:09.422Z" itemprop="datePublished">2023-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/08/hello-world/">
-        Hello World
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
       
 
       
